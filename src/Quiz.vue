@@ -1,6 +1,6 @@
 <template>
   <div class="main-screen">
-    Welcome, please enjoy this quiz written in Vue.js
+    Welcome, please enjoy this quiz written in Vue
     <div class="ux-button">
       begin
     </div>
