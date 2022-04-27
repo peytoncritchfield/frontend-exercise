@@ -1,13 +1,30 @@
 <template>
   <div class="main-screen">
-    Welcome, please enjoy this quiz written in Vue
-    <div class="ux-button">
-      begin
-    </div>
+    
+    <quiz-home
+      v-if="activeStep === quizSteps.home"
+      @begin="activeStep = quizSteps.main"
+    />
+
+    <quiz-main
+      v-if="activeStep === quizSteps.main"
+      @finish="activeStep = quizSteps.summary"
+    />
+
+    <quiz-summary
+      v-if="activeStep === quizSteps.summary"
+      @restart="activeStep = quizSteps.home"
+    />
+
   </div>
 </template>
 
 <script>
+import { quizSteps } from '@/constants.js';
+import QuizHome from '@/components/QuizHome.vue';
+import QuizMain from '@/components/QuizMain.vue';
+import QuizSummary from '@/components/QuizSummary.vue';
+
 export default {
   props: {
     questions: {
@@ -15,11 +32,17 @@ export default {
       required: true
     }
   },
+  components: {
+    QuizHome,
+    QuizMain,
+    QuizSummary,
+  },
   data() {
     return {
-      activeQuestion: 0,
+      quizSteps,
+      activeStep: quizSteps.home
     };
-  }
+  },
 };
 </script>
 
@@ -38,17 +61,6 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.ux-button {
-  margin-top: 10px;
-  text-align: center;
-  width: 50px;
-  height: 20px;
-  color: rgb(41, 52, 58);
-  background-color: rgb(210, 235, 247);
-  border-radius: 8px;
-  cursor: pointer;
 }
 
 </style>

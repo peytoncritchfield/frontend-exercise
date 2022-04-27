@@ -1,9 +1,9 @@
-const quizComponents = {
-    quizHome: "quiz-home",
-    quizMain: "quiz-main",
-    quizSummary: "quiz-summary",
+const quizSteps = {
+    home: "home",
+    main: "main",
+    summary: "summary",
 }
 
 export {
-    quizComponents,
+    quizSteps,
 }
