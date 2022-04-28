@@ -9,6 +9,7 @@
     <quiz-main
       v-if="activeStep === quizSteps.main"
       @finish="activeStep = quizSteps.summary"
+      :quizSelection="quizSelections"
     />
 
     <quiz-summary
@@ -26,12 +27,6 @@ import QuizMain from '@/components/QuizMain.vue';
 import QuizSummary from '@/components/QuizSummary.vue';
 
 export default {
-  props: {
-    questions: {
-      type: Array,
-      required: true
-    }
-  },
   components: {
     QuizHome,
     QuizMain,
@@ -40,7 +35,8 @@ export default {
   data() {
     return {
       quizSteps,
-      activeStep: quizSteps.home
+      activeStep: quizSteps.home,
+      quizSelections: []
     };
   },
 };
@@ -54,12 +50,13 @@ export default {
 }
 
 .main-screen {
-  color: rgb(210, 235, 247);
-  background-color: rgb(41, 52, 58);
+  color: rgb(163, 194, 208);
+  background-color: #30414E;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
+  padding-top: 280px;
   align-items: center;
 }
 

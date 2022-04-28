@@ -1,15 +1,19 @@
 .ux-button {
     margin-top: 10px;
     text-align: center;
-    width: 100px;
-    height: 30px;
+    width: 200px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: rgb(41, 52, 58);
-    background-color: rgb(210, 235, 247);
+    background: #ADB9C4;
     border-radius: 8px;
     cursor: pointer;
+}
+
+.ux-button-active {
+    background-color: #bee7ea;
 }
 
 .ux-container {
@@ -17,4 +21,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.ux-header {
+    font-size: x-large;
+    margin-bottom: 36px;
 }

@@ -1,10 +1,10 @@
 <template>
     <div class="ux-container">
-        <div>
+        <div class="ux-header">
             Welcome, please enjoy this quiz written in Vue
         </div>
         <div
-            class="ux-button"
+            class="ux-button ux-button-active"
             @click="$emit('begin')"
         >
             BEGIN
@@ -21,5 +21,6 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
 
 </style>
