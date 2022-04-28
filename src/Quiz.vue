@@ -9,12 +9,13 @@
     <quiz-main
       v-if="activeStep === quizSteps.main"
       @finish="activeStep = quizSteps.summary"
-      :quizSelection="quizSelections"
+      @save-answer="buildSummary"
     />
 
     <quiz-summary
       v-if="activeStep === quizSteps.summary"
-      @restart="activeStep = quizSteps.home"
+      :summary="summary"
+      @restart="restart"
     />
 
   </div>
@@ -36,9 +37,18 @@ export default {
     return {
       quizSteps,
       activeStep: quizSteps.home,
-      quizSelections: []
+      summary: []
     };
   },
+  methods: {
+    buildSummary(summaryItem) {
+      this.summary.push(summaryItem);
+    },
+    restart() {
+      this.activeStep = quizSteps.home;
+      this.summary = [];
+    },
+  }
 };
 </script>
 
@@ -50,13 +60,12 @@ export default {
 }
 
 .main-screen {
-  color: rgb(163, 194, 208);
+  color: rgb(255, 255, 255);
   background-color: #30414E;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
-  padding-top: 280px;
+  padding-top: 220px;
   align-items: center;
 }
 
