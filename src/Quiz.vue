@@ -65,7 +65,7 @@ export default {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  padding-top: 220px;
+  padding-top: 100px;
   align-items: center;
 }
 
