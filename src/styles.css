@@ -1,0 +1,33 @@
+.ux-button {
+    margin-top: 10px;
+    text-align: center;
+    width: 200px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(101, 115, 123);
+    background: #ADB9C4;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.ux-navigation-button {
+    background-color: rgb(252, 252, 252);
+    color: rgb(41, 52, 58);
+    width: fit-content;
+    padding: 3px 14px;
+    align-self: flex-end;
+}
+
+.ux-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.ux-header {
+    font-size: x-large;
+    margin-bottom: 32px;
+}
